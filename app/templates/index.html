@@ -13,8 +13,8 @@
        <th>Description</th>
     {%for img_title, img_url, img_desc in rows%}
         <tr>
-            <td>{{ img_title }}</td>
-            <td>{{ img_url }}</td>
+            <td>a{{ img_title }}</td>
+            <td><a href="{{ img_url }}" target="_blank" rel="noopener noreferrer">{{ img_url }}</a></td>
             <td>{{ img_desc }}</td>
         </tr>
     {% endfor%}

@@ -51,3 +51,10 @@ th, td {
 #img-desc{
   height: 45px;
 }
+
+a {
+  color: blue;
+}
+a:visited {
+  color: rgb(230, 62, 62);
+}
