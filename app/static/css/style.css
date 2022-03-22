@@ -62,13 +62,23 @@ a:visited {
   color: rgb(230, 62, 62);
 }
 
-img{
+img.zoom{
   border-radius: 8px;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    width:5%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width:5%;
+  overflow: hidden;
+  cursor: zoom-in;
+  box-shadow: -1px 5px 15px black;
 }
+img {
+  transition: opacity 0.5s;
+  display: block;
+  width: 100%;
+}
+
+
 #img-descp{
   display: inline-block;
   padding: 10px;
@@ -76,4 +86,11 @@ img{
 
 #read_more{
   font-size: small;
+}
+
+.format-img{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width:22%;
 }
