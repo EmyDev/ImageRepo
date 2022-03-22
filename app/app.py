@@ -34,7 +34,24 @@ def index():
     return render_template('index.html', rows=rows)
 
 
-
+@app.route('/add', methods = ['POST', 'GET'])
+def add():  
+    if request.method == 'POST':
+        img_title = request.form['img_title']
+        img_url = request.form['img_url']
+        img_desc = request.form['img_desc']
+        if not img_title:
+            flash('Image name is required!')
+        else:
+            connection = mysql.connector.connect(**DB_conf)
+            cursor = connection.cursor()
+            rr = f"INSERT INTO img (img_title, img_url, img_desc) VALUES ('{img_title}', '{img_url}' , '{img_desc}');"
+            cursor.execute(rr)
+            connection.commit()
+            cursor.close()
+            connection.close()
+            return redirect(url_for('index'))
+    return render_template('add.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

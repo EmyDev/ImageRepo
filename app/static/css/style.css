@@ -15,8 +15,39 @@ h1 {
 table, th, td {
     border: 3px solid darksalmon;
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
   }
 th, td {
     padding: 10px;
   }
+
+  form div.form-group{
+    padding: 10px;
+  }
+
+  #add-img label {
+    padding-left:26px;
+    width:125px;
+    text-transform: uppercase;
+    display:inline-block
+}
+
+.form-control{
+  width: 450px;
+  height: 30px;
+}
+
+.update-btn {
+  padding: 10px;
+  margin-left: 25px;
+  margin-top: 25px;
+  width: 100px;
+  border: none;
+  background-color:lightgreen;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#img-desc{
+  height: 45px;
+}
