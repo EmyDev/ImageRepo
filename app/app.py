@@ -53,17 +53,15 @@ def add():
             return redirect(url_for('index'))
     return render_template('add.html')
 
-@app.route('/delete/<img>', methods=('POST',))
+@app.route('/delete/<string:img>', methods= ['GET'])
 def delete(img):
+    flash('Image was successfully deleted!')
     connection = mysql.connector.connect(**DB_conf)
     cursor = connection.cursor()
-    #cursor.execute('DELETE FROM img WHERE img_title = % s', (img,))
-    rr = f"DELETE FROM img WHERE img_title = '{img}';"
-    cursor.execute(rr)
+    cursor.execute('DELETE FROM img WHERE img_title = %s', (img,))
     connection.commit()
     cursor.close()
     connection.close()
-    flash('"{}" was successfully deleted!'.format(img))
     return redirect(url_for('index'))
 
     

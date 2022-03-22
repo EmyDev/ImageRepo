@@ -14,11 +14,7 @@
        <tr>
            <td>{{ img_title }}</td>
            <td> <img src="{{ img_url }}"><a href="{{ img_url }}" target="_blank"><div id="display-img">{{ img_desc }}</div></a></td>
-            <td>
-                <form action="{{ url_for('delete', img = '{{img_title}}') }}" method="post"> 
-                    <input type="submit" value= "Delete IMAGE">
-                </form>
-            </td>
+            <td><a href="/delete/{{ img_title }}">DELETE</a></td>
         </tr>
    {% endfor %}
     </table> 
