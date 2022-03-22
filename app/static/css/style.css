@@ -58,3 +58,15 @@ a {
 a:visited {
   color: rgb(230, 62, 62);
 }
+
+img{
+  border-radius: 8px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12%;
+}
+div{
+  display: inline;
+  padding: 20px;
+}

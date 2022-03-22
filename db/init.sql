@@ -8,6 +8,6 @@ CREATE TABLE img (
 );
 
 INSERT INTO img (img_title, img_url, img_desc) VALUES 
-('Ferae','https://en.wikipedia.org/wiki/Ferae#/media/File:Ferae.png','A mirorder'),
-('Euarchontoglires','https://en.wikipedia.org/wiki/Euarchontoglires#/media/File:Euarchontoglires_1.jpg','A clade' ),
-('Boreoeutheria','https://en.wikipedia.org/wiki/Boreoeutheria#/media/File:Laurasiatheria.jpg','A magnorder');
+('Ferae','https://upload.wikimedia.org/wikipedia/commons/5/50/Ferae.png','A mirorder'),
+('Euarchontoglires','https://upload.wikimedia.org/wikipedia/commons/a/a3/Euarchontoglires_1.jpg','A clade' ),
+('Boreoeutheria','https://upload.wikimedia.org/wikipedia/commons/0/0c/Laurasiatheria.jpg','A magnorder');

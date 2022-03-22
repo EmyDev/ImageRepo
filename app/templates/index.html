@@ -10,12 +10,11 @@
    <table>
        <th>Image</th>
        <th>URL</th>
-       <th>Description</th>
     {%for img_title, img_url, img_desc in rows%}
         <tr>
-            <td>a{{ img_title }}</td>
-            <td><a href="{{ img_url }}" target="_blank" rel="noopener noreferrer">{{ img_url }}</a></td>
-            <td>{{ img_desc }}</td>
+            <td>{{ img_title }}</td>
+            <td> <img src="{{ img_url }}"><a href="{{ img_url }}" target="_blank">
+                <div>{{ img_desc }}</div></a></td>
         </tr>
     {% endfor%}
     </table>  
