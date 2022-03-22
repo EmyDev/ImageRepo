@@ -6,7 +6,7 @@ import json
 
 
 app = Flask(__name__)
-#app.config['SECRET_KEY'] = 'emanmostafaazabmostafaazab'
+app.config['SECRET_KEY'] = 'emanmostafaazabmostafaazab'
 
 
 DB_conf = {
@@ -52,6 +52,21 @@ def add():
             connection.close()
             return redirect(url_for('index'))
     return render_template('add.html')
+
+@app.route('/delete/<img>', methods=('POST',))
+def delete(img):
+    connection = mysql.connector.connect(**DB_conf)
+    cursor = connection.cursor()
+    #cursor.execute('DELETE FROM img WHERE img_title = % s', (img,))
+    rr = f"DELETE FROM img WHERE img_title = '{img}';"
+    cursor.execute(rr)
+    connection.commit()
+    cursor.close()
+    connection.close()
+    flash('"{}" was successfully deleted!'.format(img))
+    return redirect(url_for('index'))
+
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

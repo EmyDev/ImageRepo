@@ -10,14 +10,20 @@
    <table>
        <th>Image</th>
        <th>URL</th>
-    {%for img_title, img_url, img_desc in rows%}
-        <tr>
-            <td>{{ img_title }}</td>
-            <td> <img src="{{ img_url }}"><a href="{{ img_url }}" target="_blank">
-                <div>{{ img_desc }}</div></a></td>
+       {% for img_title, img_url, img_desc in rows %}
+       <tr>
+           <td>{{ img_title }}</td>
+           <td> <img src="{{ img_url }}"><a href="{{ img_url }}" target="_blank"><div id="display-img">{{ img_desc }}</div></a></td>
+            <td>
+                <form action="{{ url_for('delete', img = '{{img_title}}') }}" method="post"> 
+                    <input type="submit" value= "Delete IMAGE">
+                </form>
+            </td>
         </tr>
-    {% endfor%}
-    </table>  
-    
+   {% endfor %}
+    </table> 
+    <form action="{{ url_for('add') }}" method="GET"> 
+        <input type="submit" class="update-btn" value= "ADD IMAGE">
+    </form> 
 </body>
 </html>
