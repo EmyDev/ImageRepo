@@ -9,12 +9,15 @@
    <h1>Welcome to Image Repo</h1>
    <table>
        <th>Image</th>
-       <th>URL</th>
-       {% for img_title, img_url, img_desc in rows %}
+       <th>Description</th>
+       <th>Action</th>
+       {% for img_title, img_url, img_desc, text_url in rows %}
        <tr>
-           <td>{{ img_title }}</td>
-           <td> <img src="{{ img_url }}"><a href="{{ img_url }}" target="_blank"><div id="display-img">{{ img_desc }}</div></a></td>
-            <td><a href="/delete/{{ img_title }}">DELETE</a></td>
+            <td>{{ img_title }}</td>
+            <td><a href="{{ img_url }}" target="_blank"><img src="{{ img_url }}"></a><div id="img-descp">{{ img_desc }}</div>
+                <a href="{{ text_url }}" id="read_more" target="_blank"> Read More >></a>
+            </td>
+            <td><a href="/delete/{{ img_title }}" class="update-btn">DELETE</a></td>
         </tr>
    {% endfor %}
     </table> 

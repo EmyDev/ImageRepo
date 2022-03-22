@@ -40,12 +40,14 @@ def add():
         img_title = request.form['img_title']
         img_url = request.form['img_url']
         img_desc = request.form['img_desc']
+        text_url = request.form['text_url']
+
         if not img_title:
             flash('Image name is required!')
         else:
             connection = mysql.connector.connect(**DB_conf)
             cursor = connection.cursor()
-            rr = f"INSERT INTO img (img_title, img_url, img_desc) VALUES ('{img_title}', '{img_url}' , '{img_desc}');"
+            rr = f"INSERT INTO img (img_title, img_url, img_desc, text_url) VALUES ('{img_title}', '{img_url}' , '{img_desc}','{text_url}');"
             cursor.execute(rr)
             connection.commit()
             cursor.close()
